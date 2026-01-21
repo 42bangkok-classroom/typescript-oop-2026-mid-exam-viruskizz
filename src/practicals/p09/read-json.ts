@@ -4,6 +4,11 @@ export function readJson(fileName: string): unknown[] {
   try {
     const filedata = fs.readFileSync(fileName, 'utf-8');
     const data = JSON.parse(filedata);
+    if (Array.isArray(data)) {
+      const err =  new Error()
+      err.name = 'SyntaxError';
+      throw err;
+    }
     return data;
   } catch (e: unknown) {
     const errName = (e as Error).name;
@@ -17,6 +22,6 @@ export function readJson(fileName: string): unknown[] {
   }
 }
 
-console.log(readJson('./src/practicals/p09/datasets/products.json'));
-console.log(readJson('./datasets/x.json'));
-console.log(readJson('./src/practicals/p09/datasets/invalid'));
+// console.log(readJson('./src/practicals/p09/datasets/products.json'));
+// console.log(readJson('./datasets/x.json'));
+// console.log(readJson('./src/practicals/p09/datasets/invalid'));
