@@ -1,7 +1,7 @@
 // Write your code below
 const n = +process.argv[2]
 
-if (Number.isNaN(input) || input <= 0) {
+if (Number.isNaN(n) || n <= 0) {
   // console.log('Invalid Input');
 } else {
   for (let i = 1; i <= n; i++) {
