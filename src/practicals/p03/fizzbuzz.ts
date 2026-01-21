@@ -1,1 +1,16 @@
 // Write your code below
+const n = +process.argv[1]
+
+if (Number.isNaN(input) || input <= 0) {
+  // console.log('Invalid Input');
+} else {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('FizzBuzz');
+    } else if (i % 3 === 0) {
+      console.log('Fizz');
+    } else if (i % 5 === 0) {
+      console.log('Buzz');
+    }
+  }
+}
