@@ -1,5 +1,5 @@
 // Write your code below
-const n = +process.argv[1]
+const n = +process.argv[2]
 
 if (Number.isNaN(input) || input <= 0) {
   // console.log('Invalid Input');
