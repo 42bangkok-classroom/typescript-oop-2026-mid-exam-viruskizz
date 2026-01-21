@@ -4,7 +4,8 @@ export function readJson(fileName: string): unknown[] {
   try {
     const filedata = fs.readFileSync(fileName, 'utf-8');
     const data = JSON.parse(filedata);
-    if (Array.isArray(data)) {
+    console.log(Array.isArray(data))
+    if (!Array.isArray(data)) {
       const err =  new Error()
       err.name = 'SyntaxError';
       throw err;
