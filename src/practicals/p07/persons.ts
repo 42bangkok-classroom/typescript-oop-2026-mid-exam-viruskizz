@@ -1,10 +1,13 @@
-interface Person {
+export interface Person {
   firstName?: string;
   lastName?: string;
   age?: number;
 }
 
-function sortPersons(persons: Person[]): Person[] {}
+export function sortPersons(persons: Person[]): Person[] {
+  const p = persons.filter(p => !!p.firstName || !!p.lastName || !!p.age)
+  return p
+}
 
 
 const persons: Person[] = [
@@ -16,3 +19,5 @@ const persons: Person[] = [
   { firstName: "Jane", lastName: "Smith", age: -5 },
   { lastName: "NoName", age: 40 }
 ];
+
+console.log(sortPersons(persons))
