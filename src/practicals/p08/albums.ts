@@ -34,4 +34,4 @@ export async function mapPhotoToAlbum(userIds?: number[]): Promise<FullAlbum[]> 
   }
 }
 
-// mapPhotoToAlbum([10]).then(res => console.log(res));
+// mapPhotoToAlbum([1]).then(res => console.log(res));
